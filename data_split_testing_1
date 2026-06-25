@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+data = {
+"experience":[300,600,900,1500],
+"salary":[1000,1500,2000,3000]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+# split data
+X = df['experience'] # capital X
+y = df['salary']
+
+# train test split
+x_train,x_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
+print("x train: ",x_train)
+print("x test: ",x_test)
+print("y train: ", y_train)
+print("y test: ", y_test)
